@@ -1,4 +1,3 @@
-
 FILES = synch-reset.vhd
 
 WORK_DIR = "/tmp/work"
