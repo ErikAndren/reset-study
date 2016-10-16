@@ -1,4 +1,5 @@
-FILES = synch-reset.vhd
+FILES = FF_w_synch_reset.vhd \
+	asynch-reset.vhd
 
 WORK_DIR = "/tmp/work"
 MODELSIMINI_PATH = modelsim.ini
