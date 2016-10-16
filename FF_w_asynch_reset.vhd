@@ -7,13 +7,11 @@ use work.Types.all;
 
 entity FF_w_asynch_reset is
         port (
-        Rst : in  bit1;
-        Clk      : in  bit1;
+        Rst    : in  bit1;
+        Clk    : in  bit1;
         --
-        Input    : in  bit1;
-        Output   : out bit1;
-        --
-        Rst_N    : out bit1
+        Input  : in  bit1;
+        Output : out bit1
         );
 end entity;
 
