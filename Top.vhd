@@ -45,6 +45,4 @@ begin
       Input  => Input,
       Output => Output(1)
     );
-
-
 end architecture rtl;
