@@ -15,22 +15,25 @@ entity FF_w_synch_reset is
         --
         Rst_N    : out bit1
         );
+
 end entity;
 
 architecture rtl of FF_w_synch_reset is
   signal FF_D : bit1;
   signal FF_Q : bit1;
 begin
+  FF_D_Assign : FF_D <= Input;
+
   synch_reset : process (Clk)
   begin
     if (rising_edge(Clk)) then
       if AsyncRst = '1' then
-        FF_D <= '0';
+        FF_Q <= '0';
       else
-        FF_D <= Input;
+        FF_Q <= FF_D;
       end if;
     end if;
   end process;
 
-  OutputAssign : Output <= FF_D;
+  Output_Assign : Output <= FF_Q;
 end architecture rtl;

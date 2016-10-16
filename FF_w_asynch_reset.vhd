@@ -5,7 +5,7 @@ use ieee.std_logic_unsigned.all;
 
 use work.Types.all;
 
-entity T is
+entity FF_w_asynch_reset is
         port (
         AsyncRst : in  bit1;
         Clk      : in  bit1;
@@ -17,20 +17,21 @@ entity T is
         );
 end entity;
 
-architecture rtl of T is
+architecture rtl of FF_w_asynch_reset is
   signal FF_D : bit1;
   signal FF_Q : bit1;
 begin
-  synchreset : process (Clk)
+  -- Combinathoric processing goes here
+  FF_D_Assign : FF_D <= Input;
+
+  async_reset : process (Clk, AsyncRst)
   begin
-    if (rising_edge(Clk)) then
-      if AsyncRst = '1' then
-        FF_D <= '0';
-      else
-        FF_D <= Input;
-      end if;
+    if (AsyncRst = '1') then
+      FF_Q <= '0';
+    elsif (rising_edge(Clk)) then
+      FF_Q <= FF_D;
     end if;
   end process;
 
-  OutputAssign : Output <= FF_D;
+  Output_Assign : Output <= FF_Q;
 end architecture rtl;
