@@ -11,9 +11,7 @@ entity FF_w_synch_reset is
         Clk      : in  bit1;
         --
         Input    : in  bit1;
-        Output   : out bit1;
-        --
-        Rst_N    : out bit1
+        Output   : out bit1
         );
 
 end entity;
