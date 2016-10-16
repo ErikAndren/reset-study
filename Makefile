@@ -8,13 +8,16 @@ CC=vcom
 FLAGS=-work $(WORK_DIR) -93 -modelsimini $(MODELSIMINI_PATH)
 VLIB=vlib
 
-all: work vhdlfiles
+all: work lib vhdlfiles
 
 work:
 	$(VLIB) $(WORK_DIR)
 
 clean:
 	rm -rf *~ rtl_work *.wlf transcript *.bak
+
+lib:
+	@$(MAKE) -C ../Lib -f ../Lib/Makefile
 
 vhdlfiles:
 	$(CC) $(FLAGS) $(FILES)
