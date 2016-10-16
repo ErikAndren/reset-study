@@ -7,7 +7,7 @@ use work.Types.all;
 
 entity FF_w_synch_reset is
         port (
-        AsyncRst : in  bit1;
+        Rst : in  bit1;
         Clk      : in  bit1;
         --
         Input    : in  bit1;
@@ -25,7 +25,7 @@ begin
   synch_reset : process (Clk)
   begin
     if (rising_edge(Clk)) then
-      if AsyncRst = '1' then
+      if Rst = '1' then
         FF_Q <= '0';
       else
         FF_Q <= FF_D;

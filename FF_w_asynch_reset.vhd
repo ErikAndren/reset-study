@@ -7,7 +7,7 @@ use work.Types.all;
 
 entity FF_w_asynch_reset is
         port (
-        AsyncRst : in  bit1;
+        Rst : in  bit1;
         Clk      : in  bit1;
         --
         Input    : in  bit1;
@@ -24,9 +24,9 @@ begin
   -- Combinathoric processing goes here
   FF_D_Assign : FF_D <= Input;
 
-  async_reset : process (Clk, AsyncRst)
+  async_reset : process (Clk, Rst)
   begin
-    if (AsyncRst = '1') then
+    if (Rst = '1') then
       FF_Q <= '0';
     elsif (rising_edge(Clk)) then
       FF_Q <= FF_D;
