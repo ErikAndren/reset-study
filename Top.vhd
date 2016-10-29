@@ -11,7 +11,7 @@ entity Top is
     Clk      : in  bit1;
     --
     Input    : in  bit1;
-    Output   : out word(2-1 downto 0)
+    Output   : out word(3-1 downto 0)
     );
 end entity;
 
@@ -45,4 +45,14 @@ begin
       Input  => Input,
       Output => Output(1)
     );
+
+  FF_async_no_rst_sens : entity work.FF_w_asynch_reset_missing_reset_in_sens_list
+    port map (
+      Rst    => Rst,
+      Clk    => Clk,
+      --
+      Input  => Input,
+      Output => Output(2)
+    );
+
 end architecture rtl;
