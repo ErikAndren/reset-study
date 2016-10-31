@@ -65,6 +65,10 @@ set_location_assignment PIN_145 -to Output[1]
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_146 -to Output[2]
+set_global_assignment -name VHDL_FILE FF_w_asynch_reset_missing_in_reset_assignment.vhd
 set_global_assignment -name VHDL_FILE FF_w_asynch_reset_missing_reset_in_sens_list.vhd
 set_global_assignment -name VHDL_FILE ../Lib/ResetSync.vhd
 set_global_assignment -name VHDL_FILE ../Lib/Types.vhd
@@ -72,7 +76,5 @@ set_global_assignment -name VHDL_FILE Top.vhd
 set_global_assignment -name VHDL_FILE FF_w_synch_reset.vhd
 set_global_assignment -name VHDL_FILE FF_w_asynch_reset.vhd
 set_global_assignment -name SDC_FILE "reset-study.sdc"
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_location_assignment PIN_146 -to Output[2]
+set_location_assignment PIN_149 -to Output[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

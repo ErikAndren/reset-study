@@ -3,6 +3,7 @@ QUARTUS_PATH=/opt/altera/13.0sp1/quartus
 FILES = FF_w_synch_reset.vhd \
 	FF_w_asynch_reset.vhd \
 	FF_w_asynch_reset_missing_reset_in_sens_list.vhd \
+	FF_w_asynch_reset_missing_in_reset_assignment.vhd \
 	Top.vhd
 
 WORK_DIR = "/tmp/work"
